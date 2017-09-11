@@ -85,7 +85,10 @@ def main():
 main()
 
 
-'''The first thing is to import gc, which is built in garbage collector, i'm not sure if gc helps at all but i like to think that it does.
+'''
+**********************  READ THIS  ***********************
+
+The first thing is to import gc, which is built in garbage collector, i'm not sure if gc helps at all but i like to think that it does.
 
 now change following: 
 
