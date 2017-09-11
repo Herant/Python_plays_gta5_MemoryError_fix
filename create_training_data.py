@@ -63,7 +63,7 @@ def main():
                 np.save(file_name,training_data)
                 gc.enable()
                 gc.collect()
-                if len(training_data) >= 80000:
+                if len(training_data) >= 10000:     #CHANGE THIS TO 20000, 30000 ..etc after each session
                     break
                     gc.enable()
                     gc.collect()
@@ -85,7 +85,7 @@ def main():
 main()
 
 
-'''The first thing is to import gc, which is built in garbage collector, i'n not sure if gc helps at all but i like to think that it does.
+'''The first thing is to import gc, which is built in garbage collector, i'm not sure if gc helps at all but i like to think that it does.
 
 now change following: 
 
@@ -104,5 +104,11 @@ if len(training_data) % 1000 == 0:
 i'd strongly suggest to make a copy of .npy file after each session, and if it crashed and delete your original "training_data.npy" you'd still have the copy from last session which you can continue from.
 I increased every session with  10000, and with this setup i got to 79000 which was alot better than getting max 8000..
 
+also i did threw:
+
+gc.enable()
+gc.collect()
+
+in my shell after each session, like i said i'm not sure if it helps but whatever..
 
 If there is anyone who got better solution please be my guest.'''
