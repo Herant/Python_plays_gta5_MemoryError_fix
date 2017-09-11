@@ -83,3 +83,26 @@ def main():
 
 
 main()
+
+
+'''The first thing is to import gc, which is built in garbage collector, i'n not sure if gc helps at all but i like to think that it does.
+
+now change following: 
+
+screen = cv2.resize(screen, (40,40))
+
+after that add few lines:
+
+if len(training_data) % 1000 == 0:
+                print(len(training_data))
+                np.save(file_name,training_data)
+                gc.enable()
+                gc.collect()
+                if len(training_data) >= 10000:
+                    break
+
+i'd strongly suggest to make a copy of .npy file after each session, and if it crashed and delete your original "training_data.npy" you'd still have the copy from last session which you can continue from.
+I increased every session with  10000, and with this setup i got to 79000 which was alot better than getting max 8000..
+
+
+If there is anyone who got better solution please be my guest.'''
